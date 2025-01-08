@@ -1,13 +1,30 @@
-export default function ProductList () {
+import Link from "next/link";
 
-    return (
+interface Product {
+  pid: number;
+}
 
-        <>
-            <h1>Product List</h1>
-            <h2>Product 1</h2>     
-            <h2>Product 2</h2>     
-            <h2>Product 3</h2>     
-            <h2>Product 4</h2>     
-        </>
-    );
-};
+// replace ==> make to remove the back navigation
+
+const productList: Product[] = [
+  { pid: 1 },
+  { pid: 2 },
+  { pid: 3 },
+  { pid: 4 },
+  { pid: 5 },
+  { pid: 6 },
+];
+
+export default function ProductList() {
+  return (
+    <>
+      <Link href="/">Home</Link>
+      <h1>Product List</h1>
+      {productList.map((product) => (
+        <h2 key={product.pid}>
+          <Link href={`/products/${product.pid}`} replace = {product.pid=== 3}>Product-{product.pid}</Link>
+        </h2>
+      ))}
+    </>
+  );
+}
