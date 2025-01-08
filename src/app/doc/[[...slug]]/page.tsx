@@ -1,6 +1,6 @@
 
 
-// Catch all full segments using [...slug]
+// Catch all full segments using [[...slug]]
 // http://localhost:3000/docs/{slug1}/{slug2}/{slug3}/
 // http://localhost:3000/docs/feature1/concept1/example1
 
