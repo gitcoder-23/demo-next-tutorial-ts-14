@@ -1,5 +1,10 @@
-export default function ProductNewDetails ({params}) {
 
+ type productType = {
+params: {productId: string}
+
+}
+
+export default function ProductNewDetails({ params }: productType) {
     return (
 
         <>
